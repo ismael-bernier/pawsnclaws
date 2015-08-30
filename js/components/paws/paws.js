@@ -89,53 +89,56 @@ function($scope, $routeParams, $http, Data) {
 
 }]);
 
-pawsControllers.controller('pawsResult', ['$scope', '$routeParams', '$http', 'Data',
-function($scope, $routeParams, $http, Data) {
+pawsControllers.controller('pawsResult', ['$scope', '$routeParams', '$location', '$http', 'Data',
+function($scope, $routeParams, $location, $http, Data) {
     $scope.data=Data;
-
-    var url = 'http://api.petfinder.com/pet.find?key='+$scope.data.key;
-    if($scope.data.animal && 0 < $scope.data.animal.length)
-    {
-        url = url + '&animal='+$scope.data.animal;
-    }
-    if($scope.data.animalBreed && 0 < $scope.data.animalBreed.length)
-    {
-        url = url + '&breed='+$scope.data.animalBreed;
-    }
-    if($scope.data.animalSize && 0 < $scope.data.animalSize.length)
-    {
-        url = url + '&size='+$scope.data.animalSize;
-    }
-    if($scope.data.age && 0 < $scope.data.age.length)
-    {
-        url = url + '&age='+$scope.data.age;
-    }
-    if($scope.data.gender && 0 < $scope.data.gender.length)
-    {
-        url = url + '&sex='+$scope.data.gender;
-    }
     if($scope.data.humanLocation && 0 < $scope.data.humanLocation.length)
     {
+        var url = 'http://api.petfinder.com/pet.find?key='+$scope.data.key;
+        if($scope.data.animal && 0 < $scope.data.animal.length)
+        {
+            url = url + '&animal='+$scope.data.animal;
+        }
+        if($scope.data.animalBreed && 0 < $scope.data.animalBreed.length)
+        {
+            url = url + '&breed='+$scope.data.animalBreed;
+        }
+        if($scope.data.animalSize && 0 < $scope.data.animalSize.length)
+        {
+            url = url + '&size='+$scope.data.animalSize;
+        }
+        if($scope.data.age && 0 < $scope.data.age.length)
+        {
+            url = url + '&age='+$scope.data.age;
+        }
+        if($scope.data.gender && 0 < $scope.data.gender.length)
+        {
+            url = url + '&sex='+$scope.data.gender;
+        }
+        if($scope.data.offset && 0 < $scope.data.offset.length)
+        {
+            url = url + '&offset='+$scope.data.offset;
+        }
         url = url + '&location='+$scope.data.humanLocation;
-    }
-    if($scope.data.offset && 0 < $scope.data.offset.length)
-    {
-        url = url + '&offset='+$scope.data.offset;
-    }
-
-    url = url +'&count=1&output=full&format=json';
-     $.ajax({
-         type : 'GET',
-         data : {},
-         url : url+'&callback=?' ,
-         dataType: 'json',
-         success : function(data) {
-             console.log(data);
-             $scope.$apply();
-         },
-         error : function(request,error)
-         {
-             alert("Request: "+JSON.stringify(request));
-         }
-     });
+        url = url +'&count=1&output=full&format=json';
+         $.ajax({
+             type : 'GET',
+             data : {},
+             url : url+'&callback=?' ,
+             dataType: 'json',
+             success : function(data) {
+                 console.log(data.petfinder.pets.pet);
+                 $scope.data.result = data.petfinder.pets.pet;
+                 $scope.$apply();
+             },
+             error : function(request,error)
+             {
+                 alert("Request: "+JSON.stringify(request));
+             }
+         });
+     }
+     else {
+         var location = '/app/location';
+         $location.path(location);
+     }
 }]);

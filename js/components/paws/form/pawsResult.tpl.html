@@ -1,3 +1,25 @@
 <div  data-ng-controller="pawsResult">
-    <p>Placeholder for the results</p>
+    <h3 data-ng-bind="data.result.name.$t"></h3>
+    <p class="description-p" data-ng-bind="data.result.description.$t"></p>
+    <p class="profile-p">
+        <span data-ng-bind="data.result.breeds.breed.$t"></span>
+        <span data-ng-bind="data.result.age.$t"></span>
+        <span data-ng-bind="data.result.sex.$t"></span>
+        <span data-ng-bind="data.result.size.$t"></span>
+    </p>
+    <p class="images-p">
+        <img ng-src="{{data.result.media.photos.photo[2].$t}}" alt="Description" />
+        <img ng-src="{{data.result.media.photos.photo[7].$t}}" alt="Description" />
+    </p>
+    <p class="contact-p">
+        <span data-ng-bind="data.result.contact.phone.$t"></span>
+        <span data-ng-bind="data.result.contact.address1.$t"></span>
+        <span data-ng-bind="data.result.contact.city.$t"></span>
+        <span data-ng-bind="data.result.contact.state.$t"></span>
+    </p>
+    <p class="options-p">
+        <span data-ng-repeat="option in data.result.options.option"><span data-ng-bind="option.$t"></span></span>
+    </p>
+    <p class="status-p">Status: <span data-ng-bind="data.result.status.$t"></span></p>
+    <p class="updated-p">Last update: <span data-ng-bind="data.result.lastUpdate.$t"></span></p>
 </div>
