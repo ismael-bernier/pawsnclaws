@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="pawsApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Paws n Claws | Symbiotic Web Design</title>
+        <link href="./css/styles.css" rel="stylesheet">
+        <link href="./css/paws.css" rel="stylesheet">
+       <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    </head>
+    <body data-ng-controller="mainPaws">
+        <div id="main-wrapper" class="container">
+            <div class="row page-header">
+                <a data-ng-href="#/app/home"><h1>Paws'n'Claws</h1></a>
+            </div>
+            <div class="row" id="main-content" data-ng-view>
+            </div>
+            <div id="page-footer" class="row">
+                <p>Designed by <a data-ng-href="http://symbioticwebdesign.com">Symbiotic Web Design</a> | Search Powered by <a data-ng-href="http://petfinder.com">petfinder.com</a></p>
+            </div>
+        </div>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.min.js"></script>
+		<script src="https://code.angularjs.org/1.4.5/angular-resource.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-sanitize.min.js"></script>
+		<script type="text/javascript" src="./js/ui-bootstrap-tpls-0.12.1.js"></script>
+        <script type="text/javascript" src="./js/components/paws/paws.js"></script>
+        <script type="text/javascript" src="./js/components/paws/mainPaws.js"></script>
+        <script type="text/javascript" src="./js/app.js"></script>
+        <script type="text/javascript" src="./js/javascript.js"></script>
+    </body>
+</html>
