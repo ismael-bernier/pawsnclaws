@@ -1,5 +1,20 @@
 <div data-ng-controller="pawsAnimal">
-    <p>Ok, let's begin with a simple question. Are you a cat person? or a dog person?</p>
+    <p>Ok, let's begin with a simple question. Are you a cat person, a dog person, or are you into more exotic animals?</p>
+<select id="animal" name="animal" data-ng-model="data.animal">
+    <option value=""></option>
+    <option value="dog">Dog</option>
+    <option value="cat">Cat</option>
+    <option value="rabbit">Rabbit</option>
+    <option value="smallfurry">Small & Furry</option>
+    <option value="horse">Horse</option>
+    <option value="bird">Bird</option>
+    <option value="reptile">Scales</option>
+    <option value="pig">Pig</option>
+    <option value="barnyard">Barnyard</option>
+</select>
+
+</div>
+
     <div class="row">
         <div class="section-nav col-md-12">
             <a data-ng-href="#/app/breed" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-arrow-right"></span> NEXT</a>

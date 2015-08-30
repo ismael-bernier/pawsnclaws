@@ -1,5 +1,10 @@
 <div data-ng-controller="pawsGender">
     <p>Ok, do you have a preference in gender?</p>
+    <select id="gender" name="gender" data-ng-model="data.gender">
+        <option value=""></option>
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+    </select>
     <div class="row">
         <div class="section-nav col-md-12">
             <a data-ng-href="#/app/size" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-arrow-left"></span> PREVIOUS</a>

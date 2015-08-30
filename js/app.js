@@ -37,6 +37,9 @@
 			.when('/app/result', {
 			templateUrl: './js/components/paws/form/pawsResult.tpl.html'
 			})
+			.when('/app/random', {
+			templateUrl: './js/components/paws/form/randomResult.tpl.html'
+			})
 		  	.otherwise({
 	        	templateUrl: './js/components/paws/home.tpl.html'
 			});

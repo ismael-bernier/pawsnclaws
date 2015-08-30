@@ -1,9 +1,16 @@
 <div data-ng-controller="pawsSize">
     <div data-ng-controller="pawsSize">
         <p>Ok, do you have a preference in sizes?</p>
+        <select id="animalSize" name="animalSize" data-ng-model="data.animalSize">
+            <option value=""></option>
+            <option value="S">Small</option>
+            <option value="M">Medium</option>
+            <option value="L">Large</option>
+            <option value="XL">Extra Large</option>
+        </select>
         <div class="row">
             <div class="section-nav col-md-12">
-                <a data-ng-href="#/app/breed" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-arrow-left"></span> PREVIOUS</a>
+                <a data-ng-href="#/app/animal" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-arrow-left"></span> PREVIOUS</a>
                 <a data-ng-href="#/app/gender" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-arrow-right"></span> NEXT</a>
             </div>
         </div>

@@ -1,12 +1,13 @@
 <div data-ng-controller="pawsBreed">
     <p>Ok, do you know what breed you prefer?</p>
+    <select id="animal" name="animal" data-ng-model="data.animalBreed" data-ng-options="breed.$t for breed in data.breeds">
+       <option value=""><span data-ng-bind='breed.$t'></span></option>
+   </select>
     <div class="row">
         <div class="section-nav col-md-12">
             <a data-ng-href="#/app/animal" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-arrow-left"></span> PREVIOUS</a>
             <a data-ng-href="#/app/size" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-arrow-right"></span> NEXT</a>
-            <ul data-ng-repeat="breed in data.breeds">
-                <li ><span data-ng-bind='breed.$t'></span></li>
-            </ul>
+
         </div>
     </div>
 </div>
