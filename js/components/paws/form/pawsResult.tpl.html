@@ -1,4 +1,4 @@
-<div  class="row" data-ng-controller="pawsResult">
+<div class="row" data-ng-controller="pawsResult">
     <div class="profile-div col-md-4">
         <p>
             <h3 data-ng-bind="data.result.name.$t"></h3>
@@ -13,13 +13,13 @@
             <span data-ng-hide="''== data.result.sex.$t || undefined == data.result.sex.$t"data-ng-bind="data.result.contact.state.$t"></span>
         </p>
     </div>
-    <div class="images-div col-md-8">
+    <div class="col-md-8">
         <div class="row">
             <div class="images-div col-md-6">
-                <img data-ng-hide="''== data.result.media.photos.photo[2].$t || undefined == data.result.media.photos.photo[2].$t" ng-src="{{data.result.media.photos.photo[2].$t}}" alt="Description" />
+                <img data-ng-hide="''== data.result.media.photos.photo[2].$t || undefined == data.result.media.photos.photo[2].$t" ng-src="{{data.result.media.photos.photo[2].$t}}" alt="Image of pet up for adoption" />
             </div>
             <div class="images-div col-md-6">
-                <img data-ng-hide="''== data.result.media.photos.photo[7].$t || undefined == data.result.media.photos.photo[7].$t" ng-src="{{data.result.media.photos.photo[7].$t}}" alt="Description" />
+                <img data-ng-hide="''== data.result.media.photos.photo[7].$t || undefined == data.result.media.photos.photo[7].$t" ng-src="{{data.result.media.photos.photo[7].$t}}" alt="Image of pet up for adoption" />
             </div>
             <div class="updated-div col-md-12">
                 <p>Last update: <span data-ng-bind="data.result.lastUpdate.$t"></span></p>

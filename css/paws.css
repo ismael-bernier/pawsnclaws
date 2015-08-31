@@ -1,8 +1,25 @@
-#page-footer {
-    border-top:solid 1px #bababa;
-    text-align:center;
-    margin-top:1em;
-    padding-top:1em;
+
+body {
+    background: url(../images/grasskitten.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#header-div {
+    margin-bottom:1em;
+}
+
+#header-div a h1{
+    color:#eee;
+    text-shadow: 0 0 3px #0000FF, 0 0 5px #00FF00;
+    font-size:75px;
+}
+
+#main-content {
+    background-color:rgba(255, 255, 255, 0.8);
+    padding:2em 2em;
 }
 
 .section-nav {
@@ -17,4 +34,17 @@
 .profile-div span {
     display:block;
     margin-bottom:10px;
+}
+
+#page-footer {
+    text-align:center;
+    margin-top:1em;
+}
+
+#footer-p {
+    background-color:rgba(255, 255, 255, 0.8);
+}
+
+#footer-p a{
+    color:#3d8b50;
 }

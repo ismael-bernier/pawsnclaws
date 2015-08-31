@@ -1,6 +1,8 @@
 #Paws'N'Claws
 ####Where your best friend awaits you!
 
+#####Live at http://pawsnclaws.website
+
 ## DESCRIPTION
 
 ###small client facing app tapping into petfinder.com's api to allow users to find their ideal match through a simple, interactive interface. created as a code challenge.
@@ -14,6 +16,6 @@ Get around the angular/CORS barrier and integrate ngRessource for a RESTful expe
 
 Also, while integrating ngRessource, will properly organize the returned data prior to binding to scope.
 
-Add validation for the postal code
+Add validation for the postal code and thus remove potential to bug results page
 
 Add random quick pick

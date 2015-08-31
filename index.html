@@ -11,14 +11,14 @@
     </head>
     <body data-ng-controller="mainPaws">
         <div id="main-wrapper" class="container">
-            <div class="row page-header">
-                <a data-ng-href="#/app/home"><h1>Paws'n'Claws</h1></a>
-                <span class='pull-right'><a data-ng-href="#/app/home" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-refresh"></span> NEW SEARCH</a></span>
+            <div id="header-div" class="row">
+                    <a data-ng-href="#/app/home"><h1>Paws'n'Claws</h1></a>
+                    <span class='pull-right'><a data-ng-href="#/app/home" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-refresh"></span> NEW SEARCH</a></span>
             </div>
             <div class="row" id="main-content" data-ng-view>
             </div>
             <div id="page-footer" class="row">
-                <p>Designed by <a data-ng-href="http://symbioticwebdesign.com">Symbiotic Web Design</a> | Search Powered by <a data-ng-href="http://petfinder.com">petfinder.com</a></p>
+                <p id="footer-p">Designed by <a data-ng-href="http://symbioticwebdesign.com">Symbiotic Web Design</a> | Search Powered by <a data-ng-href="http://petfinder.com">petfinder.com</a></p>
             </div>
         </div>
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>

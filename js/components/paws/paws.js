@@ -18,7 +18,7 @@ function($scope, Data) {
     $scope.data.gender='';
     $scope.data.animalOptions='';
     $scope.data.humanLocation='';
-    $scope.data.key='f6b5c510f82e5c78172d1432f284ba8c';
+    $scope.data.key='xxxx';
     $scope.data.goToHome = function(){
         var home = '/app/home';
         $location.path(home);
