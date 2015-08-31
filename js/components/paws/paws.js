@@ -1,15 +1,33 @@
 /***
  * Services
  */
-var pawsServices = angular.module('pawsServices', ['ngRoute', 'ngResource']);
+var pawsServices = angular.module('pawsServices', ['ngRoute']);
 
 /***
  * Controllers
  */
 var pawsControllers = angular.module('pawsControllers', ['pawsServices']);
 
-pawsControllers.controller('pawsHome', ['$scope', '$routeParams', '$http', 'Data',
-function($scope, $routeParams, $http, Data) {
+pawsControllers.controller('mainPaws', ['$scope', 'Data',
+function($scope, Data) {
+    $scope.data=Data;
+    $scope.data.animal='';
+    $scope.data.animalBreed='';
+    $scope.data.animalSize='';
+    $scope.data.age='';
+    $scope.data.gender='';
+    $scope.data.animalOptions='';
+    $scope.data.humanLocation='';
+    $scope.data.key='xxxx';
+    $scope.data.goToHome = function(){
+        var home = '/app/home';
+        $location.path(home);
+    }
+}]);
+
+
+pawsControllers.controller('pawsHome', ['$scope', 'Data',
+function($scope, Data) {
     $scope.data=Data;
     $scope.data.animal='';
     $scope.data.breed='';
@@ -19,14 +37,8 @@ function($scope, $routeParams, $http, Data) {
     $scope.data.animalOptions='';
 }]);
 
-pawsControllers.controller('pawsAnimal', ['$scope', '$routeParams', '$http', 'Data',
-function($scope, $routeParams, $http, Data) {
-    $scope.data=Data;
-
-}]);
-
-pawsControllers.controller('pawsBreed', ['$scope', '$routeParams', '$location', '$http', 'Data',
-function($scope, $routeParams, $location, $http, Data) {
+pawsControllers.controller('pawsBreed', ['$scope', '$location', 'Data',
+function($scope, $location, Data) {
     $scope.data=Data;
     if($scope.data.animal && 0 < $scope.data.animal.length)
     {
@@ -53,44 +65,8 @@ function($scope, $routeParams, $location, $http, Data) {
      }
 }]);
 
-pawsControllers.controller('pawsSize', ['$scope', '$routeParams', '$http', 'Data',
-function($scope, $routeParams, $http, Data) {
-    $scope.data=Data;
-
-}]);
-
-pawsControllers.controller('pawsGender', ['$scope', '$routeParams', '$http', 'Data',
-function($scope, $routeParams, $http, Data) {
-    $scope.data=Data;
-
-}]);
-
-pawsControllers.controller('pawsAge', ['$scope', '$routeParams', '$http', 'Data',
-function($scope, $routeParams, $http, Data) {
-    $scope.data=Data;
-
-}]);
-
-pawsControllers.controller('pawsOptions', ['$scope', '$routeParams', '$http', 'Data',
-function($scope, $routeParams, $http, Data) {
-    $scope.data=Data;
-
-}]);
-
-pawsControllers.controller('pawsAnimal', ['$scope', '$routeParams', '$http', 'Data',
-function($scope, $routeParams, $http, Data) {
-    $scope.data=Data;
-
-}]);
-
-pawsControllers.controller('pawsLocation', ['$scope', '$routeParams', '$http', 'Data',
-function($scope, $routeParams, $http, Data) {
-    $scope.data=Data;
-
-}]);
-
-pawsControllers.controller('pawsResult', ['$scope', '$routeParams', '$location', '$http', 'Data',
-function($scope, $routeParams, $location, $http, Data) {
+pawsControllers.controller('pawsResult', ['$scope', '$location', 'Data',
+function($scope, $location, Data) {
     $scope.data=Data;
     if($scope.data.humanLocation && 0 < $scope.data.humanLocation.length)
     {
@@ -127,7 +103,6 @@ function($scope, $routeParams, $location, $http, Data) {
              url : url+'&callback=?' ,
              dataType: 'json',
              success : function(data) {
-                 console.log(data.petfinder.pets.pet);
                  $scope.data.result = data.petfinder.pets.pet;
                  $scope.$apply();
              },

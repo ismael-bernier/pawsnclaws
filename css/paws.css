@@ -8,3 +8,13 @@
 .section-nav {
     text-align:center;
 }
+
+.images-div img {
+    width:100%;
+    height:auto;
+}
+
+.profile-div span {
+    display:block;
+    margin-bottom:10px;
+}

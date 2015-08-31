@@ -1,25 +1,29 @@
-<div  data-ng-controller="pawsResult">
-    <h3 data-ng-bind="data.result.name.$t"></h3>
-    <p class="description-p" data-ng-bind="data.result.description.$t"></p>
-    <p class="profile-p">
-        <span data-ng-bind="data.result.breeds.breed.$t"></span>
-        <span data-ng-bind="data.result.age.$t"></span>
-        <span data-ng-bind="data.result.sex.$t"></span>
-        <span data-ng-bind="data.result.size.$t"></span>
-    </p>
-    <p class="images-p">
-        <img ng-src="{{data.result.media.photos.photo[2].$t}}" alt="Description" />
-        <img ng-src="{{data.result.media.photos.photo[7].$t}}" alt="Description" />
-    </p>
-    <p class="contact-p">
-        <span data-ng-bind="data.result.contact.phone.$t"></span>
-        <span data-ng-bind="data.result.contact.address1.$t"></span>
-        <span data-ng-bind="data.result.contact.city.$t"></span>
-        <span data-ng-bind="data.result.contact.state.$t"></span>
-    </p>
-    <p class="options-p">
-        <span data-ng-repeat="option in data.result.options.option"><span data-ng-bind="option.$t"></span></span>
-    </p>
-    <p class="status-p">Status: <span data-ng-bind="data.result.status.$t"></span></p>
-    <p class="updated-p">Last update: <span data-ng-bind="data.result.lastUpdate.$t"></span></p>
+<div  class="row" data-ng-controller="pawsResult">
+    <div class="profile-div col-md-4">
+        <p>
+            <h3 data-ng-bind="data.result.name.$t"></h3>
+            <span data-ng-hide="''== data.result.description.$t || undefined == data.result.description.$t" >Description: <span  data-ng-bind="data.result.description.$t"></span></span>
+            <span data-ng-hide="''== data.result.breeds.breed.$t || undefined == data.result.breeds.breed.$t">Breed: <span  data-ng-bind="data.result.breeds.breed.$t"></span></span>
+            <span data-ng-hide="''== data.result.age.$t || undefined == data.result.age.$t">Age: <span  data-ng-bind="data.result.age.$t"></span></span>
+            <span data-ng-hide="''== data.result.sex.$t || undefined == data.result.sex.$t">Gender: <span  data-ng-bind="data.result.sex.$t"></span></span>
+            <span data-ng-hide="''== data.result.size.$t || undefined == data.result.size.$t">Size: <span  data-ng-bind="data.result.size.$t"></span></span>
+            <span data-ng-hide="''== data.result.contact.phone.$t || undefined == data.result.contact.phone.$t"data-ng-bind="data.result.contact.phone.$t"></span>
+            <span data-ng-hide="''== data.result.contact.address1.$t || undefined == data.result.contact.address1.$t"data-ng-bind="data.result.contact.address1.$t"></span>
+            <span data-ng-hide="''== data.result.contact.city.$t || undefined == data.result.contact.city.$t"data-ng-bind="data.result.contact.city.$t"></span>
+            <span data-ng-hide="''== data.result.sex.$t || undefined == data.result.sex.$t"data-ng-bind="data.result.contact.state.$t"></span>
+        </p>
+    </div>
+    <div class="images-div col-md-8">
+        <div class="row">
+            <div class="images-div col-md-6">
+                <img data-ng-hide="''== data.result.media.photos.photo[2].$t || undefined == data.result.media.photos.photo[2].$t" ng-src="{{data.result.media.photos.photo[2].$t}}" alt="Description" />
+            </div>
+            <div class="images-div col-md-6">
+                <img data-ng-hide="''== data.result.media.photos.photo[7].$t || undefined == data.result.media.photos.photo[7].$t" ng-src="{{data.result.media.photos.photo[7].$t}}" alt="Description" />
+            </div>
+            <div class="updated-div col-md-12">
+                <p>Last update: <span data-ng-bind="data.result.lastUpdate.$t"></span></p>
+            </div>
+        </div>
+    </div>
 </div>
